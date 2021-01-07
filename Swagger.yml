@@ -2,7 +2,7 @@ Endpoint returning a predicted intent for a sentence.
 ---
 parameters:
     - name: sentence
-      in: path
+      in: query
       type: string
       required: true
 responses:
