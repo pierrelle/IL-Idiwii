@@ -1,0 +1,10 @@
+Endpoint returning a predicted intent for a sentence.
+---
+parameters:
+    - name: sentence
+      in: path
+      type: string
+      required: true
+responses:
+    200:
+      description: Intents and their probabilities.
