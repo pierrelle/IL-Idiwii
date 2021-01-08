@@ -1,18 +1,36 @@
 import spacy
+import logging
+import time
 
 from flask import Flask, jsonify, request
-from flasgger import Swagger
-
-app = Flask(__name__)
-swagger = Swagger(app)
+from flasgger import SwaggerView, Schema, fields
 
 nlp = spacy.load("model/")
 
-@app.route('/api/intent', methods=['GET'])
-def get_intent():
-    """
-    file: Swagger.yml
-    """
-    sentence = request.args.get("sentence", None)
-    result = nlp(sentence).cats
-    return jsonify(result)
+class IntentView(SwaggerView):
+    parameters = [
+        {
+            "name": "sentence",
+            "in": "query",
+            "type": "string",
+            "required": "true",
+        }
+    ]
+    responses = {
+        200: {
+            "description": "Intents and their probabilities.",
+        }
+    }
+    
+    def get(self):
+        sentence = request.args.get("sentence", None)
+        
+        start = time.time()
+        result = nlp(sentence).cats
+        end = time.time()
+        
+        logger = logging.getLogger("waitress")
+        logger.setLevel(logging.INFO)
+        logger.info(f" Process time: {end-start}")
+        
+        return jsonify(result)
