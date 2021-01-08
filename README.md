@@ -33,7 +33,7 @@ Pour utiliser le notebook `visualization.ipynb`, il faut que l'image docker d'un
 
   
 
-`docker pull <nom du modèle>` avec pour nom de modèle "wiidiiremi/projet_industrialisation_ia_3a" pour le modèle fourni par Idiwii, ou "pcroissant/il_idiwii" pour le modèle crée avec SpaCy
+`docker pull <nom du modèle>` avec pour nom de modèle "wiidiiremi/projet_industrialisation_ia_3a" pour le modèle fourni par Idiwii, ou "pcroissant/il_idiwii" pour le modèle crée avec SpaCy. ([lien dockerhub](https://hub.docker.com/repository/docker/pcroissant/il_idiwii))
 
 puis `docker images` pour obtenir l'ID de l'image
 
