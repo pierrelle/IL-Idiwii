@@ -20,7 +20,7 @@ Les notebooks intéressants sont placés dans le dossier `src`
 
   
 
-Pour executer n'importe quel notebook, il est nécéssaire de placer préalablement les fichiers `training_set.json` et `testing_set.json` dans un fichier "data", qui doit être situé à la racine du projet. 
+Pour executer n'importe quel notebook, il est nécéssaire de placer préalablement les fichiers `training_set.json` et `testing_set.json` dans un dossier "data", qui doit être situé à la racine du projet. 
 Ensuite, après avoir créer un environnement virtuel et vous être placé dedans, les librairies et modèles peuvent être installés grâce à la commande `make init`.
 
   
